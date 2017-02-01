@@ -39,7 +39,7 @@ if os.path.isfile("/etc/init.d/artillery"):
         answer = "uninstall"
 
 if not os.path.isfile("/etc/init.d/artillery"):
-    answer = input("Do you want to install Artillery and have it automatically run when you restart [y/n]: ")
+    answer = "y"
 
 if answer.lower() in ["yes", "y"]:
     if is_posix():
@@ -89,7 +89,7 @@ if answer.lower() in ["yes", "y"]:
         shutil.copytree(install_path, program_files + "\\Artillery\\")
 
     if is_posix():
-        choice = input("Do you want to keep Artillery updated? (requires internet) [y/n]: ")
+        choice = "n"
         if choice in ["y", "yes"]:
             print("[*] Checking out Artillery through github to /var/artillery")
             # if old files are there
@@ -115,7 +115,7 @@ if answer.lower() in ["yes", "y"]:
                 subprocess.Popen(
                     "chown root:wheel /Library/LaunchDaemons/com.artillery.plist", shell=True).wait()
 
-    choice = input("Would you like to start Artillery now? [y/n]: ")
+    choice = "n"
     if choice in ["yes", "y"]:
         if is_posix():
             subprocess.Popen("/etc/init.d/artillery start", shell=True).wait()
