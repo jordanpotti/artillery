@@ -15,7 +15,7 @@
 MONITOR="ON"
 #
 # THESE ARE THE FOLDERS TO MONITOR, TO ADD MORE, JUST DO "/root","/var/", etc.
-MONITOR_FOLDERS="/var/www","/root","/home"
+MONITOR_FOLDERS="/var/www","/root","/home","/etc/cron.*"
 #
 # BASED ON SECONDS, 2 = 2 seconds.
 MONITOR_FREQUENCY="90"
